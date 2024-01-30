@@ -43,14 +43,43 @@ class _HomePageState extends State<HomePage> {
                                   fontSize: 16,
                                   fontWeight: FontWeight.w200))
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
-                body: PlaceGrid()
-            )
-        )
-    );
+                body: Container(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(8),
+                        child: SearchBar(),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                              width: 120,
+                              height: 80,
+                              color: Colors.orangeAccent.withOpacity(0.6),
+                              child: Image(image: AssetImage("assets/images/ico_hotel.png"))),
+                          Container(
+                              width: 120,
+                              height: 80,
+                              color: Colors.redAccent.withOpacity(0.6),
+                              child: Image(image: AssetImage("assets/images/ico_plane.png"))),
+                          Container(
+                              width: 120,
+                              height: 80,
+                              color: Colors.tealAccent.withOpacity(0.6),
+                              child: Image(image: AssetImage("assets/images/ico_hotel_plane.png"))),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 400,
+                        child: PlaceGrid(),
+                      )
+                    ],
+                  ),
+                ))));
   }
 }
-
